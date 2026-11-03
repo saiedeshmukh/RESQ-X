@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #070b14;
+    color: #f1f5f9;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Glassmorphism & Cyber Tactical Panels */
+.glass-panel {
+  background: rgba(13, 20, 36, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.glass-card {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.35);
+}
+
+.glow-red {
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+}
+
+/* Custom Tactical Scrollbars */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(14, 22, 38, 0.6);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #1e2c4a;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}
+
+/* Leaflet Custom Map popup styling */
+.leaflet-popup-content-wrapper {
+  background: #0e1626 !important;
+  color: #f1f5f9 !important;
+  border: 1px solid #1e2c4a !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7) !important;
+}
+
+.leaflet-popup-tip {
+  background: #0e1626 !important;
+}
+
+.leaflet-tooltip {
+  background: #0e1626 !important;
+  color: #f1f5f9 !important;
+  border: 1px solid #1e2c4a !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6) !important;
+  border-radius: 6px !important;
+  font-family: inherit !important;
+}
+
+/* Prevent SVG and Leaflet focus bounding box outlines on map clicks */
+.leaflet-container :focus,
+.leaflet-container svg:focus,
+.leaflet-container path:focus,
+.leaflet-interactive:focus,
+.leaflet-pane svg path:focus,
+.leaflet-overlay-pane svg path:focus,
+svg:focus,
+path:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Google Satellite Tiles - preserved completely untouched */
+.leaflet-tile-pane .google-satellite-tiles {
+  filter: contrast(1.05) brightness(1.02) saturate(1.08) !important;
+}
+
+/* ESRI Topographic Tiles - clean hillshade & contour readability */
+.leaflet-tile-pane .topo-tiles {
+  filter: contrast(1.06) brightness(1.01) saturate(1.04) !important;
+}
+
+/* Genuine Dark Geographic Basemap - high readability, tactical contrast */
+.leaflet-tile-pane .dark-base-tiles {
+  filter: brightness(1.08) contrast(1.15) saturate(1.1) !important;
+}
+
+.leaflet-tile-pane .dark-ref-tiles {
+  filter: brightness(1.2) contrast(1.15) !important;
+}
+
+.leaflet-tile-pane .satellite-tiles {
+  filter: contrast(1.15) brightness(1.05) saturate(1.1);
+}
+
+/* Authentic Google Maps Bottom-Right Attribution Bar */
+.leaflet-container .leaflet-control-attribution {
+  background: rgba(255, 255, 255, 0.82) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+  color: #3c4043 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Google Sans", Arial, sans-serif !important;
+  font-size: 10px !important;
+  line-height: 14px !important;
+  padding: 2px 8px !important;
+  margin: 0 !important;
+  border-top-left-radius: 4px !important;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.15) !important;
+  user-select: none !important;
+}
+
+.leaflet-container .leaflet-control-attribution a {
+  color: #1a73e8 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+}
+
+.leaflet-container .leaflet-control-attribution a:hover {
+  text-decoration: underline !important;
+}
+
+@keyframes radar-pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(6, 182, 212, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(6, 182, 212, 0);
+  }
+}
+
+.animate-radar {
+  animation: radar-pulse 2s infinite;
+}
+
+/* Tactical Disaster Pin Popup */
+.tactical-disaster-popup .leaflet-popup-content {
+  margin: 10px 12px !important;
+  line-height: 1.4 !important;
+}
+
+.tactical-disaster-popup .leaflet-popup-close-button {
+  color: #94a3b8 !important;
+  padding: 6px 8px !important;
+}
+
+.tactical-disaster-popup .leaflet-popup-close-button:hover {
+  color: #ef4444 !important;
+}
